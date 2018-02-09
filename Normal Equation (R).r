@@ -22,4 +22,9 @@ B = ginv(t(X) %*% X) %*% t(X) %*% y
 sampleData = c(1, 9.75, 4.3, 6.3, 13.2)
 
 # So we get the y value from the sampleData
-print(t(B) %*% sampleData)
+t(B) %*% sampleData
+# 9.858337
+
+# Mean Squared Error score for the model (J(B))
+1/(2*nrow(dataset))*sum((X %*% B - y)**2)
+# 0.0001030049
